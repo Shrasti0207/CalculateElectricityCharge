@@ -1,10 +1,11 @@
-case class CountElectricityCharge(accountNumber: Double ,
-                                  accountUserName: String ,
-                                  address: String ,
-                                  previousUnit: Double ,
-                                  currentUnit: Double) {
-
-  def countElectricity(): Double={
+case class CountElectricityCharge(
+  accountNumber: Double,
+  accountUserName: String,
+  address: String,
+  previousUnit: Double,
+  currentUnit: Double
+) {
+  def countElectricity(): Double = {
 
     val consumedUnits = currentUnit - previousUnit
     if (consumedUnits <= 250) {
@@ -20,11 +21,12 @@ case class CountElectricityCharge(accountNumber: Double ,
       electricityBill
     }
   }
+
   val calculateFinalPayableAmount = {
-    try{
-      countElectricity +(countElectricity * 0.18)
+    try {
+      countElectricity + (countElectricity * 0.18)
     }
-    catch{
+    catch {
       case _ => println("Something went Wrong")
     }
 

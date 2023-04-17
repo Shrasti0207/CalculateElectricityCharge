@@ -12,5 +12,4 @@ class CountElectricityChargeTest extends AnyFunSuite{
     val testInputs = CountElectricityCharge(0, "user1", "Delhi", 0, 0)
     assert(testInputs.calculateFinalPayableAmount === 0)
   }
-
 }
